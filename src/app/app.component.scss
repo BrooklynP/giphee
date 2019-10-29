@@ -12,7 +12,6 @@ header{
 }
 
 .gif-container{
-    // width: auto;
     height: 200px;
     display: inline-block;
 }
@@ -34,7 +33,7 @@ a{
     opacity: 0;
     color: #18181A;
     transition: ease-in-out;
-    transition-duration: 0.2s;
+    transition-duration: 0.4s;
     padding:0;
     position: relative;
     top: -124px;
