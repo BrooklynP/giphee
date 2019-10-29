@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   readonly API_KEY = '1Eflrztw4KGqo6eBPk0yzQWKaQOCvv4A';
   readonly LIMIT = 50;
-  readonly QUERY = 'halloween';
+  readonly QUERY = 'Halloween';
   readonly API_URL = 'http://api.giphy.com/v1/gifs/';
   gifs: any;
 
@@ -23,7 +22,5 @@ export class AppComponent {
       this.gifs = gifsArray.data;
       console.log(this.gifs);
     });
-
-
   }
 }

@@ -4,7 +4,37 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-h1{
+
+header{
+    height: 5vh;
+    width: 100%;
+    background-color: #18181A;
+}
+
+.gif-container{
+    // width: auto;
+    height: 200px;
+    display: inline-block;
+}
+
+.gif-container:hover a{
+    opacity: 1;
+}
+.gif-container:hover img{
+    opacity: 0.4;
+}
+img{
+    display: block;
+}
+a{
+    font-size: 32pt;
     text-align: center;
-    color: #EB6123
+    opacity: 0;
+    color: #18181A;
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    padding:0;
+    position: relative;
+    top: -124px;
+    left: calc(50% - 21.34px); //Width is 42.68px
 }

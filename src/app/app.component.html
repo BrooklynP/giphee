@@ -1,4 +1,9 @@
-<h1>Spooky Gifs</h1>
+<header>
+  <h1>{{QUERY}} Gifs</h1>
+</header>
 <div class="gifs-container">
-  <img *ngFor="let gif of gifs" src="{{gif.images.fixed_height.url}}">
+  <div class="gif-container" *ngFor="let gif of gifs">
+    <img src="{{gif.images.fixed_height.url}}">
+    <a href="{{gif.url}}" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+  </div>
 </div>
