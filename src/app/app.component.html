@@ -1,5 +1,15 @@
 <header>
-  <h1>{{QUERY}} Gifs</h1>
+  <div class="header-main">
+    <div></div>
+    <h1>{{QUERY}} Gifs</h1>
+    <button (click)="toggleSubHeader()" class="hamburgerBtn" title="Show Settings"><i class="fas fa-hamburger"></i></button>
+  </div>
+  <div class="header-sub" [hidden]="!shouldShowSubHeader">
+    <div class="search-bar">
+      <input id="search">
+      <button (click)="changeSearchQuery()" class="searchBtn"><i class="fas fa-search" title="Search"></i></button>
+    </div>
+  </div>
 </header>
 <div class="gifs-container">
   <div class="gif-container" *ngFor="let gif of gifs">

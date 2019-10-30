@@ -9,10 +9,25 @@ import { ApiServiceService } from './api-service.service';
 })
 export class AppComponent {
   private readonly LIMIT = 30;
-  private readonly QUERY = 'Halloween';
+  private QUERY = 'Halloween';
+  shouldShowSubHeader = true;
   public gifs: Array<any>;
 
-  constructor(private http: HttpClient, api: ApiServiceService) {
+  toggleSubHeader() {
+    this.shouldShowSubHeader = !this.shouldShowSubHeader;
+  }
+
+  changeSearchQuery() {
+    let stringQuery = (document.getElementById('search') as HTMLInputElement).value;
+    stringQuery = stringQuery.charAt(0).toUpperCase() + stringQuery.slice(1);
+    this.QUERY = stringQuery;
+    this.api.searchGifs(this.QUERY, this.LIMIT).then((gifsArray) => {
+      this.gifs = gifsArray.data;
+      console.log(this.gifs);
+    });
+  }
+
+  constructor(private http: HttpClient, public api: ApiServiceService) {
     api.searchGifs(this.QUERY, this.LIMIT).then((gifsArray) => {
       this.gifs = gifsArray.data;
       console.log(this.gifs);
